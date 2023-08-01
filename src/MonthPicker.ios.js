@@ -16,17 +16,29 @@ const { width } = Dimensions.get('screen');
 const { Value, timing } = Animated;
 
 const styles = StyleSheet.create({
-  container: {
-    width,
-    position: 'absolute',
+  // container: {
+  //   //width,
+  //   //position: 'absolute',
+  //   zIndex: 500,
+  //   bottom: 0,
+  // },
+  // pickerContainer: {
+  //   height: 200,
+  //   //width,
+  // },
+  // picker: { flex: 1 },
+    container: {
+    //width:width-38,
+    //position: 'absolute',
     zIndex: 500,
     bottom: 0,
+    backgroundColor:'transparent'
   },
   pickerContainer: {
-    height: 244,
-    width,
+    height: 200,
+    //width:width-38,
   },
-  picker: { flex: 1 },
+  picker: {width:width-38},
 });
 
 const MonthPicker = ({
