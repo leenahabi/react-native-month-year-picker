@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
   //   //width,
   // },
   // picker: { flex: 1 },
-    container: {
-    //width:width-38,
+  container: {
+    width:width-38,
     //position: 'absolute',
     zIndex: 500,
     bottom: 0,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     height: 200,
     //width:width-38,
   },
-  picker: {width:width-38},
+  picker: {flex:1},
 });
 
 const MonthPicker = ({
