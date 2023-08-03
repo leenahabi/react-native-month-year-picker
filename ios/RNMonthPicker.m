@@ -152,6 +152,14 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
     }
 }
 
+- (void)onDatePickerValueChanged:(UIDatePicker *)sender {
+    self.value = sender.date;
+    // Check if the onChange property is set and call it with the updated date value
+    if (self.onChange) {
+        self.onChange(@{@"date": @(self.value.timeIntervalSince1970 * 1000)});
+    }
+}
+
 - (void)pickerView:(__unused UIPickerView *)pickerView
       didSelectRow:(NSInteger)row inComponent:(__unused NSInteger)component {
     switch (component) {
