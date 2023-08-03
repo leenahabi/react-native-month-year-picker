@@ -68,8 +68,10 @@ const MonthPicker = ({
   }, []);
 
   const onChange = useCallback(
-    ({ nativeEvent: { newDate } }) =>
-      setSelectedDate(moment(newDate, NATIVE_FORMAT).toDate()),
+    ({ nativeEvent: { newDate } }) => {
+      setSelectedDate(moment(newDate, NATIVE_FORMAT).toDate())
+      onAction && onAction(ACTION_DATE_SET,moment(newDate, NATIVE_FORMAT).toDate())
+    },
     [],
   );
 
@@ -128,13 +130,13 @@ const MonthPicker = ({
             locale,
             mode,
             onChange,
-            onDone,
             onCancel,
             onNeutral,
             okButton,
             cancelButton,
             neutralButton,
             autoTheme,
+            onChange
           }}
           style={styles.picker}
           value={value.getTime()}
